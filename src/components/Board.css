@@ -1,0 +1,44 @@
+.board {
+  background: linear-gradient(145deg, #1e3c72 0%, #2a5298 100%);
+  padding: 12px;
+  border-radius: 16px;
+  display: inline-block;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -5px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  max-width: 90vw;
+  max-height: 60vh;
+  z-index: 1;
+}
+
+
+.board::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(21, 41, 90, 0.5) 5%,
+    rgba(21, 41, 90, 0.8) 25%,
+    rgba(21, 41, 90, 0.8) 75%,
+    rgba(21, 41, 90, 0.5) 95%,
+    transparent 100%
+  );
+  border-radius: 0 0 16px 16px;
+}
+
+.row {
+  display: flex;
+  gap: clamp(4px, 1vw, 8px);
+  margin-bottom: clamp(4px, 1vw, 8px);
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}

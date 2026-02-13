@@ -1,0 +1,87 @@
+.cell {
+  width: clamp(40px, 8vw, 65px);
+  height: clamp(40px, 8vw, 65px);
+  background: linear-gradient(145deg, #1a2847, #0f1b33);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    inset 0 4px 8px rgba(0, 0, 0, 0.6),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.cell:hover {
+  background: linear-gradient(145deg, #1e2d4a, #132038);
+  transform: scale(1.05);
+}
+
+.cell-red .piece,
+.cell-yellow .piece {
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  border-radius: 50%;
+  position: relative;
+  animation: dropPiece 0.4s ease-out;
+}
+
+@keyframes dropPiece {
+  0% {
+    transform: translateY(-400px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.cell-red .piece {
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #ee5a52 45%, #c92a2a 100%);
+  box-shadow: 
+    0 5px 15px rgba(239, 68, 68, 0.6),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.3),
+    inset 0 3px 8px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cell-red .piece::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 20px;
+  height: 15px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.6), transparent);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.cell-yellow .piece {
+  background: radial-gradient(circle at 30% 30%, #ffd93d, #f9ca24 45%, #f0b90b 100%);
+  box-shadow: 
+    0 5px 15px rgba(255, 217, 61, 0.6),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.3),
+    inset 0 3px 8px rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cell-yellow .piece::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 20px;
+  height: 15px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.7), transparent);
+  border-radius: 50%;
+  filter: blur(3px);
+}
