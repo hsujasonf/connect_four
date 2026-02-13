@@ -2,10 +2,18 @@
 
 A modern Connect Four game built with React, TypeScript, and Vite.
 
+<div align="center">
+  <img src="./screenshots/gameplay.png" alt="Connect Four Game" width="800">
+</div>
+
 ## Features
 
-- Two-player gameplay (Red vs Yellow)
+- **Two game modes**: Play against a friend or challenge the computer
+- **AI Difficulty Levels**: Easy, Medium, and Hard
+- **Smart AI**: Hard mode uses minimax algorithm for challenging gameplay
 - Win detection for all directions (horizontal, vertical, diagonal)
+- Beautiful 3D visual effects with animated pieces
+- Realistic board with support legs and wooden table surface
 - Clean, modular component architecture
 - Comprehensive unit tests
 - TypeScript for type safety
@@ -26,7 +34,8 @@ src/
 ├── types/               # TypeScript type definitions
 │   └── game.ts
 ├── utils/               # Utility functions
-│   └── gameLogic.ts    # Game logic (win checking, board operations)
+│   ├── gameLogic.ts    # Game logic (win checking, board operations)
+│   └── computerAI.ts   # AI opponent with multiple difficulty levels
 ├── test/                # Test configuration
 │   └── setup.ts
 ├── App.tsx              # Root application component
@@ -67,16 +76,17 @@ npm run build
 
 ## How to Play
 
-1. Players take turns clicking on columns to drop their pieces
-2. Pieces fall to the lowest available position in the selected column
-3. First player to get 4 pieces in a row (horizontally, vertically, or diagonally) wins
-4. Click "Reset Game" to start a new game
+1. **Select Game Mode**: Choose between 2 Players or vs Computer (Easy/Medium/Hard)
+2. **Drop Pieces**: Click on any column to drop your piece
+3. **Win Condition**: Get 4 pieces in a row (horizontally, vertically, or diagonally)
+4. **Controls**: Use Reset to restart or Menu to change game mode
 
 ## Testing
 
 The project includes comprehensive unit tests for:
 
 - **Game Logic** (`gameLogic.test.ts`): Tests for board creation, piece placement, and win detection
+- **AI Logic** (`computerAI.test.ts`): Tests for computer opponent behavior at different difficulty levels
 - **Components**: Tests for all React components ensuring proper rendering and user interactions
 - **Integration Tests**: Tests for the complete game flow
 
