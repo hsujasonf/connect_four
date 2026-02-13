@@ -2,8 +2,16 @@
 
 A modern Connect Four game built with React, TypeScript, and Vite.
 
+## Screenshots
+
 <div align="center">
-  <img src="./screenshots/gameplay.png" alt="Connect Four Game" width="800">
+  <img src="./screenshots/menu.png" alt="Game Mode Selection" width="800">
+  <p><em>Game mode selection with 2 player and computer AI options</em></p>
+</div>
+
+<div align="center">
+  <img src="./screenshots/gameplay.png" alt="Connect Four Gameplay" width="800">
+  <p><em>Gameplay with 3D effects and winner announcement</em></p>
 </div>
 
 ## Features
